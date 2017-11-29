@@ -1,0 +1,40 @@
+NWB
+[] Difference: Session vs Experiment?
+
+Datatypes necessary for Lab
+
+Experiment
+  Mouse
+    Session
+      Aquisition
+        Behaviour
+          lick_intensity[trial][time]		Real	Yaro
+          speed_mouse[trial][time]		Real	Asli
+          speed_texture[trial][time]		Real	Asli
+          texture_ID[trial]			Str	Asli
+          whisker_movie[trial]			URL	Asli
+          running_movie[trial]			URL	Pia, Wolfgang
+        Data
+          layer_ID[int]				Str	
+          ephys[trial][electrodeID][time]	Real	Yaro, Chris
+          fiber[trial][fiberID][time]		Real	Yaro
+          neural_movie[layer][trial]		URL	Asli
+      Processing
+        Behaviour
+          whisker_angle[trial][time]		Real	Asli
+          whisker_touch[trial][time]		Bool	Asli
+        Data
+          roi[int]				Str	Asli			Comment about this ROI (Dendrite or soma, where it is)
+	  trace_real[trial][roiID][time]	Real	??			Real-time Ca activity of the neuron
+	  trace_spike[trial][roiID][int]	Real	??			Deconvolved spike times
+          
+TODO
+[] Can NWB handle multidimensional timeseries?
+[] Can NWB store multiple mice per file?
+[] Can NWB store multiple sessions per file?
+[] How does one submit a session in NWB?
+[] How does one submit a data under a given session in NWB?
+[] What is the format of existing data (i.e. TimeSeries)?
+[] Which existing formats can be reused?
+[] Which formats need to be extended?
+[] How to extend? - readthedocs

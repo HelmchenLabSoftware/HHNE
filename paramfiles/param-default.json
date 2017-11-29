@@ -1,0 +1,84 @@
+{
+  "file": {
+    "name"                    : "the PyNWB tutorial",
+    "session_description"     : "my first synthetic recording",
+    "identifier"              : "EXAMPLE_ID",
+    "session_start_time"      : "#now",
+    "experimenter"            : "Dr. Bilbo Baggins",
+    "lab"                     : "Bag End Laboratory",
+    "institution"             : "University of Middle Earth at the Shire",
+    "experiment_description"  : "I went on an adventure with thirteen dwarves to reclaim vast treasures.",
+    "session_id"              : "LONELYMTN"
+  },
+
+  "epoch" : {
+    "-----": {
+      "source"                : "an hypothetical source",
+      "name"                  : "epoch1",
+      "start"                 : 0.0,
+      "stop"                  : 1.0,
+      "tags"                  : ["100fps"],
+      "description"           : "the first test epoch"
+    }
+  },
+
+  "experiment_setup" : {
+    "device" : {
+      "name"                  : "GiantLaser_v1.0",
+      "source"                : "Free Electron Source"
+    },
+
+    "electrode_group" : {
+      "electrode_name"        : "tetrode1",
+      "source"                : "a hypothetical source",
+      "description"           : "an example tetrode",
+      "location"              : "somewhere in the hippocampus",
+      "device"                : "@device"
+    },
+
+    "electrode_table" : {
+      "name"                  : "my_fancy_electrodes"
+    },
+
+    "electrode" : {
+      "id"                    : 1,
+      "x"                     : 1.0,
+      "y"                     : 0.0,
+      "z"                     : 0.0,
+      "impedance"             : 5.3,
+      "location"              : "CA1",
+      "filtering"             : "none",
+      "description"           : "an example tetrode",
+      "electrode_group"       : "@electrode_group",
+      "electrode_table"       : "@electrode_table"
+    },
+
+    "electrode_table_region" : {
+      "electrode_table"       : "@electrode_table",
+      "region"                : "#gen1Dint",
+      "description"           : "the first and third electrodes"
+    }
+
+
+  },
+
+  "aquisition" : {
+    "electrical_series" : {
+      "name"                  : "test_spatial_timeseries",
+      "source"                : "a stumbling rat",
+      "resolution"            : 0.1,
+      "comments"              : "This data was randomly generated with numpy, using 1234 as the seed",
+      "description"           : "Random numbers generated with numpy.random.rand"
+    },
+
+    "spatial_series" : {
+      "name"                  : "test_ephys_data",
+      "source"                : "an hypothetical source",
+      "reference_frame"       : "origin on x,y-plane",
+      "resolution"            : 0.001,
+      "comments"              : "This data was generated with numpy, using 1234 as the seed",
+      "description"           : "This 2D Brownian process"
+    }
+  }
+
+}
